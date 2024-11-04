@@ -7,15 +7,26 @@ from Algorithms import Algorithms
 class Game:
     def __init__(self):
 
-        stage = input("Choose a stage from 1 to 25\n")
-        stage = int(stage)
-        self.Stage = Stage(stage)
-        self.Stage = self.Stage.ChooseStage()
-        self.Board = Board(self.Stage)
-        self.GameLogic = GameLogic()
-        self.Algorithms = Algorithms(self.GameLogic)
-        self.Algorithms.bfs(self.Board)
-        # self.GameLogic.inputGame(self.Board)
+        try:
+            stage = input("Choose a stage from 1 to 25\n")
+            stage = int(stage)
+            self.Stage = Stage(stage)
+            self.Stage = self.Stage.ChooseStage()
+            self.Board = Board(self.Stage)
+            self.GameLogic = GameLogic()
+            self.Algorithms = Algorithms(self.GameLogic)
+            gamemode = input("input the algorithm name or 0 to play yourself\n")
+            match gamemode:
+                case "bfs":
+                    self.Algorithms.bfs(self.Board)
+                case "dfs":
+                    self.Algorithms.dfs(self.Board)
+                case "0":
+                    self.GameLogic.inputGame(self.Board)
+                case default:
+                    print("you have to enter a valid algo name or 0")
+        except:
+            print('exited the game')
 
 
 if __name__ == "__main__":
