@@ -5,6 +5,7 @@ class Board:
     def __init__(self, Stage):
         self.row = Stage["row"]
         self.col = Stage["col"]
+        self.moves = Stage["moves"]
         self.white = Stage["whitePieces"]
         self.red = Stage["redPieces"]
         self.purple = Stage["purplePieces"]
@@ -33,7 +34,10 @@ class Board:
             for j in range(self.col):
                 if self.Matrix[i][j].type != other.Matrix[i][j].type:
                     return False
-        return True
+        if self.moves == other.moves:
+            return True
+        else:
+            return False
 
     def __str__(self):
         board = ""

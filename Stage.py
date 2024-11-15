@@ -10,6 +10,7 @@ class Stage:
                     return {
                         "row": 3,
                         "col": 4,
+                        "moves": 1,
                         "purplePieces": [(2, 0)],
                         "redPieces": [],
                         "whitePieces": [(1, 1), (1, 3)],
@@ -20,6 +21,7 @@ class Stage:
                     return {
                         "row": 5,
                         "col": 5,
+                        "moves": 1,
                         "purplePieces": [(4, 0)],
                         "redPieces": [],
                         "whitePieces": [(0, 2), (2, 0), (2, 2), (2, 4), (4, 2)],
@@ -30,6 +32,7 @@ class Stage:
                     return {
                         "row": 3,
                         "col": 4,
+                        "moves": 5,
                         "purplePieces": [(2, 0)],
                         "redPieces": [],
                         "whitePieces": [(0, 3), (2, 3)],
@@ -40,6 +43,7 @@ class Stage:
                     return {
                         "row": 5,
                         "col": 3,
+                        "moves": 2,
                         "purplePieces": [(2, 0)],
                         "redPieces": [],
                         "whitePieces": [(0, 0), (0, 2), (4, 1)],
@@ -50,6 +54,7 @@ class Stage:
                     return {
                         "row": 4,
                         "col": 3,
+                        "moves": 2,
                         "purplePieces": [(3, 1)],
                         "redPieces": [],
                         "whitePieces": [(0, 0), (1, 0), (3, 0), (0, 2), (1, 2)],
@@ -60,6 +65,7 @@ class Stage:
                     return {
                         "row": 3,
                         "col": 5,
+                        "moves": 2,
                         "purplePieces": [(2, 0)],
                         "redPieces": [],
                         "whitePieces": [(1, 2), (0, 3), (2, 3)],
@@ -70,6 +76,7 @@ class Stage:
                     return {
                         "row": 5,
                         "col": 4,
+                        "moves": 2,
                         "purplePieces": [(2, 1)],
                         "redPieces": [],
                         "whitePieces": [(0, 0), (1, 0), (2, 3), (3, 2), (4, 3)],
@@ -80,6 +87,7 @@ class Stage:
                     return {
                         "row": 3,
                         "col": 4,
+                        "moves": 2,
                         "purplePieces": [(2, 0)],
                         "redPieces": [],
                         "whitePieces": [(0, 0), (0, 2), (2, 2)],
@@ -90,6 +98,7 @@ class Stage:
                     return {
                         "row": 1,
                         "col": 7,
+                        "moves": 2,
                         "purplePieces": [(0, 0)],
                         "redPieces": [],
                         "whitePieces": [(0, 1), (0, 3), (0, 6)],
@@ -100,6 +109,7 @@ class Stage:
                     return {
                         "row": 4,
                         "col": 4,
+                        "moves": 2,
                         "purplePieces": [(0, 0)],
                         "redPieces": [],
                         "whitePieces": [(1, 1), (1, 3), (3, 0), (3, 3)],
@@ -110,6 +120,7 @@ class Stage:
                     return {
                         "row": 2,
                         "col": 5,
+                        "moves": 1,
                         "purplePieces": [],
                         "redPieces": [(1, 2)],
                         "whitePieces": [(0, 1), (0, 2), (0, 3)],
@@ -120,6 +131,7 @@ class Stage:
                     return {
                         "row": 5,
                         "col": 4,
+                        "moves": 1,
                         "purplePieces": [],
                         "redPieces": [(3, 1)],
                         "whitePieces": [(1, 0), (2, 0), (4, 0), (4, 2)],
@@ -130,6 +142,7 @@ class Stage:
                     return {
                         "row": 3,
                         "col": 6,
+                        "moves": 2,
                         "purplePieces": [],
                         "redPieces": [(2, 3)],
                         "whitePieces": [(0, 3), (2, 1), (1, 1), (0, 4)],
@@ -140,6 +153,7 @@ class Stage:
                     return {
                         "row": 4,
                         "col": 4,
+                        "moves": 2,
                         "purplePieces": [],
                         "redPieces": [(3, 3)],
                         "whitePieces": [(1, 0), (1, 2), (2, 2), (2, 1)],
@@ -150,6 +164,7 @@ class Stage:
                     return {
                         "row": 3,
                         "col": 5,
+                        "moves": 2,
                         "purplePieces": [(1, 2)],
                         "redPieces": [(2, 2)],
                         "whitePieces": [(1, 4), (0, 0), (0, 2), (2, 4)],
@@ -160,6 +175,7 @@ class Stage:
                     return {
                         "row": 5,
                         "col": 5,
+                        "moves": 3,
                         "purplePieces": [(2, 4)],
                         "redPieces": [(2, 0)],
                         "whitePieces": [(0, 3), (0, 4), (4, 3), (4, 0)],
@@ -170,6 +186,7 @@ class Stage:
                     return {
                         "row": 4,
                         "col": 4,
+                        "moves": 2,
                         "purplePieces": [(3, 3)],
                         "redPieces": [(0, 0)],
                         "whitePieces": [(1, 1), (1, 3), (2, 2), (3, 1)],
@@ -180,6 +197,7 @@ class Stage:
                     return {
                         "row": 5,
                         "col": 6,
+                        "moves": 2,
                         "purplePieces": [(4, 3)],
                         "redPieces": [(4, 2)],
                         "whitePieces": [(2, 3), (2, 1), (2, 2), (2, 5), (1, 3)],
@@ -190,6 +208,7 @@ class Stage:
                     return {
                         "row": 5,
                         "col": 5,
+                        "moves": 4,
                         "purplePieces": [(0, 2)],
                         "redPieces": [(2, 2)],
                         "whitePieces": [(1, 0), (3, 0), (2, 1), (3, 2), (3, 4), (1, 4)],
@@ -200,6 +219,7 @@ class Stage:
                     return {
                         "row": 5,
                         "col": 4,
+                        "moves": 2,
                         "purplePieces": [(4, 2)],
                         "redPieces": [(4, 3)],
                         "whitePieces": [(0, 1), (0, 3), (1, 0), (2, 0), (3, 0)],
@@ -210,6 +230,7 @@ class Stage:
                     return {
                         "row": 3,
                         "col": 4,
+                        "moves": 2,
                         "purplePieces": [(2, 0)],
                         "redPieces": [(2, 3)],
                         "whitePieces": [(1, 0), (1, 1), (0, 2), (2, 0), (2, 1)],
@@ -220,6 +241,7 @@ class Stage:
                     return {
                         "row": 4,
                         "col": 5,
+                        "moves": 3,
                         "purplePieces": [(0, 0)],
                         "redPieces": [(3, 2)],
                         "whitePieces": [(0, 1), (0, 3), (1, 0), (1, 4), (2, 1)],
@@ -230,6 +252,7 @@ class Stage:
                     return {
                         "row": 4,
                         "col": 5,
+                        "moves": 3,
                         "purplePieces": [(3, 4)],
                         "redPieces": [(3, 2)],
                         "whitePieces": [(0, 2), (2, 1), (2, 2), (2, 3), (3, 2)],
@@ -240,6 +263,7 @@ class Stage:
                     return {
                         "row": 5,
                         "col": 5,
+                        "moves": 3,
                         "purplePieces": [(1, 4)],
                         "redPieces": [(3, 0)],
                         "whitePieces": [(0, 3), (2, 1), (2, 3), (4, 1), (4, 2)],
@@ -250,6 +274,7 @@ class Stage:
                     return {
                         "row": 5,
                         "col": 4,
+                        "moves": 3,
                         "purplePieces": [(4, 0)],
                         "redPieces": [(0, 3)],
                         "whitePieces": [(0, 0), (0, 3), (2, 0), (4, 0), (4, 1), (4, 2)],

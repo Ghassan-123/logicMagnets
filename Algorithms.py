@@ -6,7 +6,6 @@ class Algorithms:
     def __init__(self, GameLogic):
         self.visited = []
         self.queue = []
-        self.stack = []
         self.Gamelogic = GameLogic
 
     def bfs(self, Board):
@@ -42,10 +41,14 @@ class Algorithms:
     def dfs(self, Board):
         row = Board.row
         col = Board.col
+        self.visited.append(copy.deepcopy(Board))
+
         if self.Gamelogic.Checkwin(Board):
             print("won")
-            return
-        self.visited.append(copy.deepcopy(Board))
+            return True
+        if Board.moves <= 0:
+            return False
+
         for i in range(row):
             for j in range(col):
                 if Board.Matrix[i][j].type == "🟣" or Board.Matrix[i][j].type == "⭕":
@@ -64,7 +67,10 @@ class Algorithms:
                                 elif temp.Matrix[k][l].type == "⭕":
                                     self.Gamelogic.RMoves(temp, k, l)
                                 if temp not in self.visited:
-                                    self.stack.append(temp)
-        headBoard = self.stack.pop()
-        print(headBoard)
-        self.dfs(headBoard)
+                                    temp.moves -= 1
+                                    print(temp)
+                                    if self.dfs(temp):
+                                        return True
+        return False
+
+
