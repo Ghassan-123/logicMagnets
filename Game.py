@@ -7,7 +7,7 @@ from Algorithms import Algorithms
 class Game:
     def __init__(self):
 
-        try:
+
             stage = input("Choose a stage from 1 to 25\n")
             stage = int(stage)
             self.Stage = Stage(stage)
@@ -21,12 +21,16 @@ class Game:
                     self.Algorithms.bfs(self.Board)
                 case "dfs":
                     self.Algorithms.dfs(self.Board)
+                case "ucs":
+                    self.Algorithms.ucs(self.Board, 0)
+                case "hillclimb":
+                    #print(self.Algorithms.heuristic(self.Board))
+                    (self.Algorithms.hillclimb(self.Board))
                 case "0":
                     self.GameLogic.inputGame(self.Board)
                 case default:
                     print("you have to enter a valid algo name or 0")
-        except:
-            print('exited the game')
+
 
 
 if __name__ == "__main__":

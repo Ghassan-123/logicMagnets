@@ -3,6 +3,7 @@ from Piece import Piece
 
 class Board:
     def __init__(self, Stage):
+        self.parent = None
         self.row = Stage["row"]
         self.col = Stage["col"]
         self.moves = Stage["moves"]
@@ -30,14 +31,28 @@ class Board:
                 self.Matrix[item[0]][item[1]] = Piece("⚫")
 
     def __eq__(self, other):
-        for i in range(self.row):
-            for j in range(self.col):
-                if self.Matrix[i][j].type != other.Matrix[i][j].type:
-                    return False
-        if self.moves == other.moves:
-            return True
+        if type(self) == type(other):
+            for i in range(self.row):
+                for j in range(self.col):
+                    if self.Matrix[i][j].type != other.Matrix[i][j].type:
+                        return False
+            if self.moves == other.moves:
+                return True
+            else:
+                return False
         else:
             return False
+
+    def __lt__(self, other):
+        return
+
+    def boardShape(self):
+        board = ""
+        for i in range(self.row):
+            for j in range(self.col):
+                if self.Matrix[i][j].type == "⭕" or self.Matrix[i][j].type == "🟣":
+                    board += f"({i},{j})"
+        return board
 
     def __str__(self):
         board = ""
