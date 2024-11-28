@@ -16,7 +16,7 @@ class GameLogic:
             fp_y = int(fp_y) - 1
             if 0 <= fp_x <= Board.row and 0 <= fp_y <= Board.col:
                 if Board.Matrix[fp_x][fp_y].type == "🟣":
-                    print("you choosed   P")
+                    print("you choosed   🟣")
 
                     lp_x = input("Choose taget piece row\n")
                     lp_y = input("Choose taget piece column\n")
@@ -42,7 +42,7 @@ class GameLogic:
                             + "board starts with row(column) 0 to 4"
                         )
                 elif Board.Matrix[fp_x][fp_y].type == "⭕":
-                    print("you choosed   R")
+                    print("you choosed   ⭕")
                     lp_x = input("Choose taget piece row\n")
                     lp_y = input("Choose target piece column\n")
                     lp_x = int(lp_x) - 1
