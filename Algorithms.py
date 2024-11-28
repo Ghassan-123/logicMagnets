@@ -16,9 +16,10 @@ class Algorithms:
         row = Board.row
         col = Board.col
         if self.Gamelogic.Checkwin(Board):
-            for p in self.printPath(Board):
-                print(p)
-            print("won")
+            print('\n the path is:\n')
+            for ind ,p in enumerate(self.printPath(Board),start = 0):
+                print(f'move number {ind}',p)
+            print("won by bfs")
             return
         self.visited.append(copy.deepcopy(Board))
         for i in range(row):
@@ -42,6 +43,7 @@ class Algorithms:
                                 if temp not in self.visited:
                                     self.queue.append(temp)
         headBoard = self.queue.pop(0)
+        print(headBoard)
         self.bfs(headBoard)
 
     def dfs(self, Board):
@@ -50,9 +52,10 @@ class Algorithms:
         self.visited.append(copy.deepcopy(Board))
 
         if self.Gamelogic.Checkwin(Board):
-            for p in self.printPath(Board):
-                print(p)
-            print("won")
+            print('\n the path is:\n')
+            for ind ,p in enumerate(self.printPath(Board),start = 0):
+                print(f'move number {ind}',p)
+            print("won by dfs")
             return True
         if Board.moves <= 0:
             return False
@@ -76,6 +79,7 @@ class Algorithms:
                                 elif temp.Matrix[k][l].type == "⭕":
                                     self.Gamelogic.RMoves(temp, k, l)
                                 if temp not in self.visited:
+                                    print(temp)
                                     temp.moves -= 1
                                     if self.dfs(temp):
                                         return True
@@ -127,9 +131,9 @@ class Algorithms:
                                     total_cost = current_cost + cost
 
                                     if self.Gamelogic.Checkwin(temp):
-                                        for p in self.printPath(temp):
-                                            print(p)
-                                        print("won")
+                                        for ind ,p in enumerate(self.printPath(temp),start = 0):
+                                            print(f'move number {ind}',p)
+                                        print("won in ucs")
                                         return
 
                                     if (total_cost, temp) not in self.queue:
@@ -201,3 +205,5 @@ class Algorithms:
                 costs = mincost[0]
                 Board = mincost[1]
                 print(Board, f"cost is: {mincost[0]}")
+                
+        

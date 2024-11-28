@@ -7,7 +7,7 @@ from Algorithms import Algorithms
 class Game:
     def __init__(self):
 
-
+        try:
             stage = input("Choose a stage from 1 to 25\n")
             stage = int(stage)
             self.Stage = Stage(stage)
@@ -30,6 +30,8 @@ class Game:
                     self.GameLogic.inputGame(self.Board)
                 case default:
                     print("you have to enter a valid algo name or 0")
+        except:
+            print('exited the game')
 
 
 
