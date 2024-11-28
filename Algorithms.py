@@ -16,9 +16,9 @@ class Algorithms:
         row = Board.row
         col = Board.col
         if self.Gamelogic.Checkwin(Board):
-            print('\n the path is:\n')
-            for ind ,p in enumerate(self.printPath(Board),start = 0):
-                print(f'move number {ind}',p)
+            print("\n the path is:\n")
+            for ind, p in enumerate(self.printPath(Board), start=0):
+                print(f"move number {ind}", p)
             print("won by bfs")
             return
         self.visited.append(copy.deepcopy(Board))
@@ -52,9 +52,9 @@ class Algorithms:
         self.visited.append(copy.deepcopy(Board))
 
         if self.Gamelogic.Checkwin(Board):
-            print('\n the path is:\n')
-            for ind ,p in enumerate(self.printPath(Board),start = 0):
-                print(f'move number {ind}',p)
+            print("\n the path is:\n")
+            for ind, p in enumerate(self.printPath(Board), start=0):
+                print(f"move number {ind}", p)
             print("won by dfs")
             return True
         if Board.moves <= 0:
@@ -131,8 +131,10 @@ class Algorithms:
                                     total_cost = current_cost + cost
 
                                     if self.Gamelogic.Checkwin(temp):
-                                        for ind ,p in enumerate(self.printPath(temp),start = 0):
-                                            print(f'move number {ind}',p)
+                                        for ind, p in enumerate(
+                                            self.printPath(temp), start=0
+                                        ):
+                                            print(f"move number {ind}", p)
                                         print("won in ucs")
                                         return
 
@@ -205,5 +207,49 @@ class Algorithms:
                 costs = mincost[0]
                 Board = mincost[1]
                 print(Board, f"cost is: {mincost[0]}")
-                
-        
+
+    def aStar(self, Board, currentMoves):
+        row = Board.row
+        col = Board.col
+        h = self.heuristic(Board)
+        g = currentMoves
+        Cost = g + h
+        self.queue.append((Cost, Board))
+
+        while self.queue:
+            currentBoard = self.queue.pop(0)[1]
+            self.visited.append(currentBoard)
+            if self.Gamelogic.Checkwin(currentBoard):
+                for ind, p in enumerate(self.printPath(currentBoard), start=0):
+                    print(f"move number {ind}", p)
+                print("won in A*")
+                return
+            for i in range(row):
+                for j in range(col):
+                    if (
+                        currentBoard.Matrix[i][j].type == "🟣"
+                        or currentBoard.Matrix[i][j].type == "⭕"
+                    ):
+                        for k in range(row):
+                            for l in range(col):
+                                temp = copy.deepcopy(currentBoard)
+                                temp.parent = currentBoard
+                                if (
+                                    temp.Matrix[k][l].type == "⚪"
+                                    or temp.Matrix[k][l].type == "🔵"
+                                ):
+                                    temp.Matrix[k][l].type = temp.Matrix[i][j].type
+                                    temp.Matrix[i][j].type = temp.Matrix[i][
+                                        j
+                                    ].initialType
+
+                                    if temp.Matrix[k][l].type == "🟣":
+                                        self.Gamelogic.PMoves(temp, k, l)
+                                    elif temp.Matrix[k][l].type == "⭕":
+                                        self.Gamelogic.RMoves(temp, k, l)
+                                    hnew = self.heuristic(temp)
+                                    gnew = self.ucscost(currentMoves)
+                                    Cnew = hnew + gnew
+                                    if temp not in self.visited:
+                                        self.queue.append((Cnew, temp))
+                                        self.queue.sort(key=lambda tmp: tmp[0])

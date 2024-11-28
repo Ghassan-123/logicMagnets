@@ -24,15 +24,15 @@ class Game:
                 case "ucs":
                     self.Algorithms.ucs(self.Board, 0)
                 case "hillclimb":
-                    #print(self.Algorithms.heuristic(self.Board))
-                    (self.Algorithms.hillclimb(self.Board))
+                    self.Algorithms.hillclimb(self.Board)
+                case "a*":
+                    self.Algorithms.aStar(self.Board, 0)
                 case "0":
                     self.GameLogic.inputGame(self.Board)
                 case default:
                     print("you have to enter a valid algo name or 0")
         except:
-            print('exited the game')
-
+            print("exited the game")
 
 
 if __name__ == "__main__":
